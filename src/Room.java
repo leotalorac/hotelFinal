@@ -5,7 +5,7 @@ public class Room {
     private float Price;
     private String cod;
     private int capacity;
-    private int avaible;
+
 
     public Room(int c,String d){
         this.capacity = c;
@@ -22,9 +22,7 @@ public class Room {
     public void setPrice(int p){
         this.Price = p;
     }
-    public void setAvaible(int c){
-        this.avaible =c;
-    }
+
     public float getPrice(){
         return this.Price;
     }
