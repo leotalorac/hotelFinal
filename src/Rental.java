@@ -28,7 +28,7 @@ public class Rental {
         int oc = sc.nextInt();
         registrated+=oc;
 
-        if(avaible !=0) {
+        if(oc<=this.R.getCapacity()) {
             this.Occupants = new Person[oc];
             System.out.println("ingresa los datos del ocupante responsable, nombre: ");
             String n = sc.next();

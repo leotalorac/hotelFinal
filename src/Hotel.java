@@ -20,16 +20,26 @@ public class Hotel {
     public void Rent(Datef fa){
         //no es total r ahy que cambiarlo
         //if(rented<totalr) {
+            boolean y = true;
             for (int i = 0; i < 3; i++) {
                 F[i].listRooms();
             }
             System.out.println("ingresa el piso y el numero despues del 0 de la habitacion que escogiste: ");
             int p = sc.nextInt();
             int h = sc.nextInt();
-            R[rented] = new Rental(F[p - 1].getRoom(h),fa);
-            R[rented].PersonData();
-            R[rented].checkIn();
-            rented++;
+            String c = p +"0"+h;
+            for(int i =0; i<rented;i++){
+                if(R[i].getF().day ==fa.day && R[i].getF().month == fa.month && R[i].getF().year == fa.year && R[i].getR().getCod().equals(c)){
+                    System.out.println("la habitacion ya esta ocupada en esa fecha");
+                    y = false;
+                }
+            }
+            if(y) {
+                R[rented] = new Rental(F[p - 1].getRoom(h),fa);
+                R[rented].PersonData();
+                R[rented].checkIn();
+                rented++;
+            }
         //}
     }
 
